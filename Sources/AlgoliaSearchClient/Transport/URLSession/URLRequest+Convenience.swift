@@ -14,7 +14,24 @@ extension URLRequest: Builder {}
 
 extension CharacterSet {
 
-  static let urlAllowed: CharacterSet = .alphanumerics.union(.init(charactersIn: "-._~")) // as per RFC 3986
+  // Allowed characters taken from [RFC 3986](https://tools.ietf.org/html/rfc3986) (cf. §2 "Characters"):
+  // - unreserved  = ALPHA / DIGIT / "-" / "." / "_" / "~"
+  // - gen-delims  = ":" / "/" / "?" / "#" / "[" / "]" / "@"
+  // - sub-delims  = "!" / "$" / "&" / "'" / "(" / ")" / "*" / "+" / "," / ";" / "="
+  //
+  // ... with these further restrictions:
+  // - ampersand ('&') and equal sign ('=') removed because they are used as delimiters for the parameters;
+  // - question mark ('?') and hash ('#') removed because they mark the beginning and the end of the query string.
+  // - plus ('+') is removed because it is interpreted as a space by Algolia's servers.
+  //
+  static let urlParameterAllowed: CharacterSet = .alphanumerics.union(.init(charactersIn: "-._~:/[]@!$'()*,;"))
+
+  static let urlPathComponentAllowed: CharacterSet = {
+    var characterSet = CharacterSet()
+    characterSet.formUnion(CharacterSet.urlPathAllowed)
+    characterSet.remove(charactersIn: "/")
+    return characterSet
+  }()
 
 }
 
@@ -36,10 +53,15 @@ extension URLRequest {
 
     var urlComponents = URLComponents()
     urlComponents.scheme = "https"
-    urlComponents.path = command.path.absoluteString.removingPercentEncoding!
+    urlComponents.percentEncodedPath = command.path.path
+    urlComponents.queryItems = [
+      URLQueryItem(name: "X-Algolia-Agent", value: UserAgentController.httpHeaderValue)
+    ]
 
     if let urlParameters = command.requestOptions?.urlParameters {
-      urlComponents.queryItems = urlParameters.map { (key, value) in .init(name: key.rawValue, value: value) }
+      let existingQueryItems = urlComponents.queryItems ?? []
+      let extraQueryItems = urlParameters.mapKeys(\.rawValue).map(URLQueryItem.init)
+      urlComponents.queryItems = existingQueryItems + extraQueryItems
     }
 
     var request = URLRequest(url: urlComponents.url!)

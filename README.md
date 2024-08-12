@@ -6,8 +6,8 @@
   <h4 align="center">The perfect starting point to integrate <a href="https://algolia.com" target="_blank">Algolia</a> within your Swift project</h4>
 
   <p align="center">
-    <a href="https://cocoapods.org/pods/AlgoliaSearchClient">
-      <img src="https://app.bitrise.io/app/6dcd3d9dd961c466/status.svg?token=q1GX8YovgWTvPx7Ueu77JQ&branch=develop"></img>
+    <a href="https://github.com/algolia/algoliasearch-client-swift/actions/workflows/tests.yml">
+      <img src="https://github.com/algolia/algoliasearch-client-swift/actions/workflows/tests.yml/badge.svg"></img>
     </a>
     <a href="https://cocoapods.org/pods/AlgoliaSearchClient">
       <img src="http://img.shields.io/cocoapods/v/AlgoliaSearchClient.svg?style=flat"></img>
@@ -60,9 +60,9 @@ If you're a framework author and use Swift API Client as a dependency, update yo
 
 ```swift
 let package = Package(
-    // 8.14.0 ..< 9.0.0
+    // 8.20.1 ..< 9.0.0
     dependencies: [
-        .package(url: "https://github.com/algolia/algoliasearch-client-swift", from: "8.13.0")
+        .package(url: "https://github.com/algolia/algoliasearch-client-swift", from: "8.20.1")
     ],
     // ...
 )
@@ -77,7 +77,7 @@ Add `import AlgoliaSearchClient` to your source files.
 To install Algolia Swift Client, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AlgoliaSearchClient', '~> 8.14'
+pod 'AlgoliaSearchClient', '~> 8.20'
 # pod 'InstantSearchClient', '~> 6.0' // Swift 4.2
 # pod 'InstantSearchClient', '~> 5.0' // Swift 4.1
 ```
@@ -94,7 +94,7 @@ $ pod update
 
 - To install InstantSearch, simply add the following line to your Cartfile:
 ```ruby
-github "algolia/algoliasearch-client-swift" ~> 8.14
+github "algolia/algoliasearch-client-swift" ~> 8.20
 # github "algolia/algoliasearch-client-swift" ~> 6.0.0 // Swift 4.2
 # github "algolia/algoliasearch-client-swift" ~> 5.0.0 // Swift 4.1
 ```

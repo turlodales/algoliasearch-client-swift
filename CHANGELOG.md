@@ -1,5 +1,89 @@
 # ChangeLog
 
+## [8.20.1](https://github.com/algolia/algoliasearch-client-swift/compare/8.20.0...8.20.1) (2024-03-04)
+
+### Fix
+
+- **analytics**: add region support (#856) ([94f90ebc](https://github.com/algolia/algoliasearch-client-swift/commit/94f90ebc))
+
+## [8.20.0](https://github.com/algolia/algoliasearch-client-swift/compare/8.19.0...8.20.0) (2023-02-02)
+
+### Misc
+
+- chore: replace swift-log with oslog (#850)
+
+## [8.19.0](https://github.com/algolia/algoliasearch-client-swift/compare/8.18.2...8.19.0) (2023-12-07)
+
+### Misc
+
+- fix(client configuration): default headers not applied (#839) ([f7745ae](https://github.com/algolia/algoliasearch-client-swift/commit/f7745ae))
+- feat(search disjunctive faceting): add request options (#840) ([5a21b35](https://github.com/algolia/algoliasearch-client-swift/commit/5a21b35))
+- chore(api key test): skip if failed (#835) ([7355d13](https://github.com/algolia/algoliasearch-client-swift/commit/7355d13))
+
+
+
+## [8.18.2](https://github.com/algolia/algoliasearch-client-swift/compare/8.18.1...8.18.2) (2023-08-15)
+
+### Fix
+
+- **AsyncOperation**: cancel() and isCancelled behavior (#801) ([c060289](https://github.com/algolia/algoliasearch-client-swift/commit/c060289))
+
+
+
+## [8.18.1](https://github.com/algolia/algoliasearch-client-swift/compare/8.18.0...8.18.1) (2023-06-22)
+
+### Fix
+
+- matching errors in the retry strategy (#817) ([0726cc5](https://github.com/algolia/algoliasearch-client-swift/commit/0726cc5))
+- added conditional FoundationNetworking import to AlgoliaRetryStrategy.swift (#815) ([1281375](https://github.com/algolia/algoliasearch-client-swift/commit/1281375))
+
+
+
+## [8.18.0](https://github.com/algolia/algoliasearch-client-swift/compare/8.17.0...8.18.0) (2023-03-24)
+
+### Feat
+
+- **rules**: add applied rules to the search response (#812) ([c25ec23](https://github.com/algolia/algoliasearch-client-swift/commit/c25ec23))
+
+### Misc
+
+- making result public (#807) ([150970e](https://github.com/algolia/algoliasearch-client-swift/commit/150970e))
+
+
+
+## [8.17.0](https://github.com/algolia/algoliasearch-client-swift/compare/8.16.0...8.17.0) (2023-02-06)
+
+### Fix
+
+- provide user agents as url parmeter (#808) ([43f6105](https://github.com/algolia/algoliasearch-client-swift/commit/43f6105))
+- lint issues (#809) ([09622f8](https://github.com/algolia/algoliasearch-client-swift/commit/09622f8))
+
+
+
+## [8.16.0](https://github.com/algolia/algoliasearch-client-swift/compare/8.15.1...8.16.0) (2022-10-24)
+
+### Feat
+
+- **search**: Disjunctive Faceting (#802) ([b2a82ba](https://github.com/algolia/algoliasearch-client-swift/commit/b2a82ba))
+
+
+
+## [8.15.1](https://github.com/algolia/algoliasearch-client-swift/compare/8.15.0...8.15.1) (2022-08-29)
+
+### Fix
+
+- URL percent encoding (#798) ([b28ebf1](https://github.com/algolia/algoliasearch-client-swift/commit/b28ebf1))
+
+
+
+## [8.15.0](https://github.com/algolia/algoliasearch-client-swift/compare/8.14.0...8.15.0) (2022-08-04)
+
+### Refactor
+
+- consistent error handling (#792) ([23b1989](https://github.com/algolia/algoliasearch-client-swift/commit/23b1989))
+
+
+
 ## [8.14.0](https://github.com/algolia/algoliasearch-client-swift/compare/...8.14.0) (2022-03-18)
 
 ### Fix
@@ -222,5 +306,4 @@
 
 - Version 8.1.2 (#679) ([e028c43](https://github.com/algolia/algoliasearch-client-swift/commit/e028c43))
 - Version 8.1.2 ([eb1db8d](https://github.com/algolia/algoliasearch-client-swift/commit/eb1db8d))
-
 
